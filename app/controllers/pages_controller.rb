@@ -19,4 +19,7 @@ class PagesController < ApplicationController
 
   def show
   end
+  
+  def timeline
+  end
 end

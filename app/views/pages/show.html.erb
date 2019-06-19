@@ -4,7 +4,7 @@
 <p>ユーザー用ページです。</p>
 <img src=<%= current_user.image_url.gsub("_normal","") %> alt="icon" width="100" height="100" border="0" />
 <p><%=  current_user.user_name %></p>
-<%= link_to 'User Page', '/pages/timeline' %>
+<%= link_to 'timeline', '/pages/timeline' %>
 <% else %>
 <p>ログインしてください</p>
 <% end %>
