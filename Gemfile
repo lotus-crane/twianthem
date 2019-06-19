@@ -8,6 +8,9 @@ gem 'oauth'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
 gem 'omniauth'
+
+#herokuのアプリケーションログ見やすくするやつ
+gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
