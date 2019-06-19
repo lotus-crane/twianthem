@@ -14,12 +14,13 @@ class PagesController < ApplicationController
     @user = client.user
     @tweets = client.home_timeline(include_entities: true)
   end
+
   def index
   end
 
   def show
   end
-  
-  def timeline
+
+  def timeline_page
   end
 end
