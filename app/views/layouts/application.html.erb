@@ -11,6 +11,7 @@
 
   <body>
   <header>
+    <%= link_to 'トップへ戻る', root_path %>
     <% if logged_in? %>
       <%= link_to 'Logout', '/signout' %>
     <% else %>

@@ -1,12 +1,10 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
-    helper_method :current_user, :logged_in?, :authenticate
+    helper_method :current_user, :logged_in?, :authenticate, :login_required
 
     def login_required
-      if session[:user_id]
-        @current_user = User.find(session[:user_id])
-      else
-        redirect_to root_path
+      return unless session[:user_id]
+      @current_user ||= User.find_by(uid: session[:user_id])
       end
     end
 
@@ -25,4 +23,3 @@ class ApplicationController < ActionController::Base
       return if logged_in?
       redirect_to root_path, alert: "ログインしてください"
     end
-end
