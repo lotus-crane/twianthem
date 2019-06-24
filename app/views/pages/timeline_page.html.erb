@@ -1,25 +1,18 @@
 <p><img src=<%= current_user.image_url.gsub("_normal","") %> alt="icon" width="70" height="70" border="0" />
 
 <%=  current_user.user_name %></p>
-<% require "twitter" %>
-<% def client_new %>
-  <% Twitter::REST::Client.new do |config| %>
-  <%  config.consumer_key = ENV['TWITTER_KEY'] %>
-  <%  config.consumer_secret = ENV['TWITTER_SECRET'] %>
-  <%  config.access_token = session[:oauth_token] %>
-  <%  config.access_token_secret = session[:oauth_token_secret] %>
-  <% end %>
-<% end %>
-<% @client = client_new %>
-<% @client.home_timeline.each do |tweet| %>
-<% if tweet.full_text.include?("#nowplaying") %>
-<%= tweet.full_text %>
-<% end %>
-<% end %>
+<%= timeline %>
 
 
 
 <!--案:ストリーミングで回収して片っ端からデータベースぶっこむ。
 リアルタイム更新で起動中は出せるようにする（これブラウザ閉じてもうごっきっぱなしにできんのかな？知らん
 RESTでも最後に検索したツイートの日時元にsinceすればうまくいけるんじゃね？
-これの実装は案外行けそうな気がする-->
+これの実装は案外行けそうな気がする
+#nowplaying検知したらリストぶっこんでそこから検索すれば楽じゃね？知らん-->
+<!--一旦ブラウザを閉じてもコントローラーからメソッドを呼び出してさえいれば動き続ける
+そのためRESTの制限に引っかからない範囲で#nowplayingを検知し続け記録し続けられる
+マイページにデータベースの最新10件を載せ続けるようにすればいいのでは？
+timeline_pageからアンセム表示ページまで飛んでそっちでアンセム判定を出そう-->
+<!--終わりが見えてきたうれしーー
+明日の俺後頑張って -->
