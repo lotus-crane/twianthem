@@ -13,16 +13,16 @@
   <header>
     <%= link_to 'トップへ戻る', root_path %>
     <% if logged_in? %>
+    <%= link_to 'ユーザーページへ', '../pages/show'%>
       <%= link_to 'Logout', '/signout' %>
     <% else %>
       <%= link_to 'Twitter Login', '/auth/twitter' %>
     <% end %>
   </header>
-  <% if flash[:notice] %>
-    <div class="notice">
-      <%= flash[:notice]%>
-    </div>
-  <% end %>
+  <% flash.each do |message_type, message| %>
+     <div class="alert alert-<%= message_type %>"><%= message %></div>
+ <% end %>
+
   <%= yield %>
 </body>
 </html>

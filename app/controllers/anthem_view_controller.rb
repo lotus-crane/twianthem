@@ -6,6 +6,6 @@ class AnthemViewController < ApplicationController
         config.access_token = session[:oauth_token]
         config.access_token_secret = session[:oauth_token_secret]
       end
-    @user_id_data = NowplayDatum.where(user_id: client_new.user.screen_name)
+    @user_id_data = NowplayDatum.where(user_id: current_user.user_name)
   end
 end

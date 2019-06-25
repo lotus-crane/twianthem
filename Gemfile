@@ -8,7 +8,7 @@ gem 'oauth'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
 gem 'omniauth'
-
+gem "jquery-rails"
 #herokuのアプリケーションログ見やすくするやつ
 gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
