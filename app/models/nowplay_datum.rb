@@ -1,0 +1,2 @@
+class NowplayDatum < ApplicationRecord
+end
