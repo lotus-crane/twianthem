@@ -1,4 +1,11 @@
-
+<table border="1">
+  <tr>
+    <td>アーティスト</td>
+    <td>曲名</td>
+    </tr>
 <% @user_id_data.each do |object| %>
-<p>アーティスト:<%= object.artist %> 曲名：<%= object.song %>　ユーザー：<%= object.user_id %></p>
+<tr>
+<td><%= object.artist %></td><td><%= object.song %></td>
+</tr>
 <%end%>
+</table>
