@@ -2,10 +2,11 @@
 <body>
 <p><img src=<%= current_user.image_url.gsub("_normal","") %> alt="icon" width="70" height="70" border="0" />
 
-<% threads = []%>
-<% threads << Thread.new {timeline()}%>
 
-<% Thread.fork { print(link_to 'ユーザーページに戻る', '../pages/show')}%>
+<% threads_start%>
+
+<%= link_to 'ユーザーページに戻る', '../pages/show'%>
+<%= link_to '取得を中断する', '../pages/killthread' %>
 </body>
 </html>
 <!--案:ストリーミングで回収して片っ端からデータベースぶっこむ。

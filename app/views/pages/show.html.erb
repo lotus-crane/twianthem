@@ -3,9 +3,11 @@
 <% if logged_in? %>
 <p>ユーザー用ページです。</p>
 <p><%= image_tag "#{current_user.image_url.gsub("_normal","_bigger")}" %><%= current_user.user_name %>
-@<%=  login_user.screen_name %></p>
+
 <%= link_to 'nowplayingの取得を開始する', 'timeline_page' %>
 <%= link_to '現在の取得データ確認！', '../anthem_view/anthem_view'%>
+
+<%= link_to '取得を中断する', '../pages/killthread' %>
 <% else %>
 <p>ログインしてください</p>
 <% end %>
