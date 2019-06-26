@@ -15,6 +15,7 @@ class PagesController < ApplicationController
       Thread.kill(t)
     end
     flash[:kill] = "スレッドを終了しました"
+    client_new.update("ハッシュタグ:nowplayingの取得を終了します #twi_test")
     redirect_to root_path
   end
 

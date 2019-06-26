@@ -40,7 +40,6 @@ class TweetGetJob < ApplicationJob
       end
     #  end
       count += 1
-      client.update("一次処理終わり #{count}")
       play_library.each do |text|
         nowplaydata = NowplayDatum.new
         text.gsub!(/#nowplaying/i, "")
