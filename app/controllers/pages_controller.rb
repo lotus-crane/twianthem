@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
 
   def timeline
-      TweetGetJob.perform_now(session[:oauth_token], session[:oauth_token_secret])
+    TweetGetJob.perform_now(session[:oauth_token], session[:oauth_token_secret])
 
 
   #play_library = []
@@ -55,8 +55,9 @@ class PagesController < ApplicationController
       client = client_new
       @user = client.user
       return @user
-    rescue Twitter::Error::TooManyRequests => error
-      flash[:tmr] = "API制限に達してしまいました…15分ほど経ってから再度お試しください"
+      rescue Twitter::Error::TooManyRequests => error
+        flash[:tmr] = "API制限に達してしまいました…15分ほど経ってから再度お試しください"
+      end
     end
   end
 
@@ -71,4 +72,3 @@ class PagesController < ApplicationController
 
   def timeline_page
   end
-end

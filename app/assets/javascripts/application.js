@@ -16,3 +16,6 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
+$(function(){
+  setTimeout("$('.time-limit').fadeOut('slow')", 1000)
+})

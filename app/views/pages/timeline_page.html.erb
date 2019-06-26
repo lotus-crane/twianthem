@@ -2,17 +2,10 @@
 <body>
 <p><img src=<%= current_user.image_url.gsub("_normal","") %> alt="icon" width="70" height="70" border="0" />
 
-<!-- <%=  current_user.user_name %></p>-->
 <% threads = []%>
 <% threads << Thread.new {timeline()}%>
-<% flash[:twiget] = "なうぷれツイートを収集開始したよ！" %>
-<script>
-  $( document ).ready(function() {
-    // メッセージを３秒後にフェードアウトする
-    $('#notice').fadeOut(5000);
-});
-</script>
-<%= link_to 'ユーザーページに戻る', '../pages/show'%>
+
+<% Thread.fork { print(link_to 'ユーザーページに戻る', '../pages/show')}%>
 </body>
 </html>
 <!--案:ストリーミングで回収して片っ端からデータベースぶっこむ。
