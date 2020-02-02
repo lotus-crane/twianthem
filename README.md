@@ -1,24 +1,7 @@
-# README
+# Twianthem
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ツイッターのTLから#nowplayingを収集し、蓄積されたデータを閲覧するためのアプリです
 
-Things you may want to cover:
+バックグラウンドでの収集がいまいちうまくいっていないこと、またTLからの収集ならtweetdeck等の公式ツールを用いて収集したほうが過去のデータ等も参照できて便利そうなので停止中です
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+デプロイ先（公開停止中）
